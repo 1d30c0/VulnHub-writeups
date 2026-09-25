@@ -29,7 +29,9 @@ Go to the site on port 80. Clicking on the different pages gives no results, but
 `<!-------------username:CSA--------------------->`   
 
 
-#### Directory Enumeration   
+#### **Directory Enumeration**
+
+
 
 Use `gobuster` in directory mode, which yields several directories:
 
@@ -75,7 +77,8 @@ Both the length that is divisible by 4 and padding '=' point to it being a valid
   Flag1: https://*hidden*   
 ~~~~
 
-#### Initial Access   
+#### **Initial Access**
+
 
 Lets try to ssh w/ the username CSA and the first flag as password, which works.
 By poking around we don't see any obvious flags.
@@ -91,7 +94,7 @@ xxd -r -p tmp.txt > .info
 (i wanted to double check with the binary from the `.info` file so i put it into a binary converter to get exactly the same flag)
 
 
-#### Privilege Escalation
+#### **Privilege Escalation**
 
 
 ~~~
@@ -100,7 +103,7 @@ Linux cybersploit-CTF 3.13.0-32-generic #57~precise1-Ubuntu SMP Tue Jul 15 03:50
 ~~~
 
 
-By looking up the kernel version, we find a [known vulnerability,](https://nvd.nist.gov/vuln/detail/cve-2015-1328]) and an [exploit](https://www.exploit-db.com/exploits/37292) we can use:
+By looking up the kernel version, we find a [known vulnerability,](https://nvd.nist.gov/vuln/detail/cve-2015-1328]) and an [exploit](https://www.exploit-db.com/exploits/37292) we can use.
 ![[exploitdb_cybersploit.png]]
 
 
@@ -150,7 +153,7 @@ cat finalflag.txt
 We have the root flag.
 
 
-#### MITRE ATT&CK Mapping
+#### **MITRE ATT&CK Mapping**
 
 | **Step**                            | **Actions**           | **Technique**                                         |
 | ----------------------------------- | --------------------- | ----------------------------------------------------- |
@@ -163,7 +166,7 @@ We have the root flag.
 | Access root flag                    | Read local file       | T1005 Data from Local System                          |
 
 
-#### Vulnerability Table
+#### **Vulnerability Table**
 
 | **Vulnerability**                                           | **Impact**                   |
 | ----------------------------------------------------------- | ---------------------------- |
@@ -173,7 +176,7 @@ We have the root flag.
 | Outdated Linux kernel                                       | Privilege escalation to root |
 
 
-#### Lessons Learned
+#### **Lessons Learned**
 
 - Do not store credentials in HTML
 - Do not store credentials in `robots`
@@ -181,6 +184,6 @@ We have the root flag.
 - Implement regular OS and kernel updates
 
 
-#### Modified Image Used
+#### **Modified Image Used**
 
 [Google Drive Link](https://drive.google.com/drive/folders/1bxINfhxSll6MKwqg28uDYVZY50YsaTab)
