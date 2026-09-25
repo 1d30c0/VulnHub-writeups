@@ -20,7 +20,7 @@ Use netdiscover to find the VM, then run `Nmap`.
 
 | Port | Service | Details                                                       |
 | ---- | ------- | ------------------------------------------------------------- |
-| 22   | SSH     | OpenSSH 5.9p1 Debian 5ubuntu1.10 (Ubuntu Linux; protocol 2.0) |
+| 22   | ssh     | OpenSSH 5.9p1 Debian 5ubuntu1.10 (Ubuntu Linux; protocol 2.0) |
 | 80   | http    | Apache httpd 2.2.22 ((Ubuntu))                                |
 
 
@@ -66,7 +66,7 @@ In `robots` we see a peculiar string (the string is different in the non-modifie
 
 Check its properties:     
 ~~~sh
-  echo -n    "TmljZSB0cnksIGJ1dCB5b3UgbmVlZCBtb3JlLgpGbGFnMTogaHR0cHM6Ly90Lm1lL1NvZnRTZXJ2ZUVkdWNhdGlvbg=="|wc -m                   
+  echo -n "TmljZSB0cnksIGJ1dCB5b3UgbmVlZCBtb3JlLgpGbGFnMTogaHR0cHM6Ly90Lm1lL1NvZnRTZXJ2ZUVkdWNhdGlvbg=="|wc -m                   
   92   
 ~~~
 
@@ -104,8 +104,6 @@ Linux cybersploit-CTF 3.13.0-32-generic #57~precise1-Ubuntu SMP Tue Jul 15 03:50
 
 
 By looking up the kernel version, we find a [known vulnerability,](https://nvd.nist.gov/vuln/detail/cve-2015-1328]) and an [exploit](https://www.exploit-db.com/exploits/37292) we can use.
-![[exploitdb_cybersploit.png]]
-
 
 
 Make a `tmp` dir and copy it into there, then compile.    
