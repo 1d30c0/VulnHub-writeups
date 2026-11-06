@@ -197,7 +197,7 @@ generate an ssh key pair on the attacker machine, and add the public key to **ra
 | Access hidden file      | Access `war.txt`                                        | T1594  Search Victim-Owned Websites                                |
 | Access hidden directory | Access `/war-is-over/`                                  | T1594 Search Victim-Owned Websites                                 |
 | Credential Access       | Use `johntheripper` to obtain password for the zip file | T1110.002 Brute Force: Password Cracking                           |
-| Credential Access       | Use `binwalk` to extract data from image                | T1078.003                                                          |
+| Credential Access       | Use `binwalk` to extract data from image                | T1552.001 Unsecured Credentials: Credentials in Files                                                          |
 | Initial Access          | ssh as floki                                            | T1078.003 Valid Accounts: Local Accounts                           |
 | Lateral Movement        | reconstruct password from hint, change over to ragnar   | T1078.003 Valid Accounts: Local Accounts                           |
 | Privilege Escalation    | modify sudoers file, sudo su                            | T1548.003 Abuse Elevation Control Mechanism: Sudo and Sudo Caching |
